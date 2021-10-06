@@ -1,0 +1,88 @@
+// This code presents Narayan and Popp (2010) Structural Break Unit Root Test
+// It capables to capture two-endogenous structural breaks within employed data
+// and also captures the break within both level and level & trend framework model
+// In this code, author tests structural breaks within Indonesia's cashless payments data
+// which have been transformed into annualised growth
+// The null hypothesis of unit roots with two structural breaks is tested
+// against alternative of stationary process with two structural breaks
+// Author: Muhammad Adisurya Pratama
+
+new;
+cls;
+library tspdlib;
+
+// Create Project Name with Full Path
+project = getGAUSShome() $+ "Practices/Narayan_PoppTest.xlsx";
+
+// Load all data for corresponding variables
+// Where DEBIT is debit cards
+// CREDIT Corresponds to credit cards
+// EMONEY denoted as Electronic Money
+// SKNBI represents Bank Indonesia National Clearing System, and
+// BIRTGS presented as Bank Indonesia Real Time Gross Settlement
+// Eventually, N and V denoted as annualised growth of transactions value and volume, respectively
+Debit_Value = loadd(project, "NDEBIT + date($Date)");
+Credit_Value = loadd(project, "NCREDIT + date($Date)");
+Emoney_Value = loadd(project, "NEMONEY + date($Date)");
+SKNBI_Value = loadd(project, "NSKNBI + date($Date)");
+BIRTGS_Value = loadd(project, "NBIRTGS + date($Date)");
+Debit_Volume = loadd(project, "VDEBIT + date($Date)");
+Credit_Volume = loadd(project, "VCREDIT + date($Date)");
+Emoney_Volume = loadd(project, "VEMONEY + date($Date)");
+SKNBI_Volume = loadd(project, "VSKNBI + date($Date)");
+BIRTGS_Volume = loadd(project, "VBIRTGS + date($Date)");
+
+// Set all model specification
+// pmax denotes the maximum lags of test. In this code, 10 is employed as maximum lags
+// ic represents the selected information criterion. Schwarz Criterion (SC) is incorporated
+// within model
+// model 2 is deployed, assumes that two breaks occur in both level and trend of data
+// 15% is enacted as default setting for trimm rate
+pmax = 10;
+ic = 2;
+model = 2;
+trimm = 0.15;
+
+// Execute Structural Breaks Test
+"Narayan and Popp (NP, 2010) Structural Break Unit Root Test";
+
+"Two Breaks in both level and trend for Debit_Value";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(Debit_Value, model(pmax, ic, trimm));
+
+"Two Breaks in both level and trend for Credit_Value";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(Credit_Value, model(pmax, ic, trimm));
+
+"Two Breaks in both level and trend for Emoney_Value";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(Emoney_Value, model(pmax, ic, trimm));
+
+"Two Breaks in both level and trend for SKNBI_Value";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(SKNBI_Value, model(pmax, ic, trimm));
+
+"Two Breaks in both level and trend for BIRTGS_Value";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(BIRTGS_Value, model(pmax, ic, trimm));
+    
+"Two Breaks in both level and trend for Debit_Volume";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(Debit_Volume, model(pmax, ic, trimm));
+    
+"Two breaks in both level and trend for Credit_Volume";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(Credit_Volume, model(pmax, ic, trimm));
+
+"Two breaks in both level and trend for Emoney_Volume";
+{ ADF_min, tb1, tb2, p, cv } =    
+    ADF_2breaks(Emoney_Volume, model(pmax, ic, trimm));
+
+"Two breaks in both level and trend for SKNBI_Volume";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(SKNBI_Volume, model(pmax, ic, trimm));
+    
+"Two breaks in both level and trend for BIRTGS_Volume";
+{ ADF_min, tb1, tb2, p, cv } =
+    ADF_2breaks(BIRTGS_Volume, model(pmax, ic, trimm));
+
