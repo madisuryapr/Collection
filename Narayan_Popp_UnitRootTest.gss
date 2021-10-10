@@ -86,3 +86,255 @@ trimm = 0.15;
 { ADF_min, tb1, tb2, p, cv } =
     ADF_2breaks(BIRTGS_Volume, model(pmax, ic, trimm));
 
+Results for the Structural Break Test
+
+Narayan and Popp (NP, 2010) Structural Break Unit Root Test
+Two Breaks in both level and trend for Debit_Value
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -4.054
+Chosen Lags:                                               2
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2018-07-01          0.746 
+Second break:                      2019-09-01          0.848 
+==============================================================
+Cannot reject the null hypothesis of a unit root.
+
+Two Breaks in both level and trend for Credit_Value
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -4.251
+Chosen Lags:                                               0
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2015-06-01          0.478 
+Second break:                      2019-09-01          0.848 
+==============================================================
+Cannot reject the null hypothesis of a unit root.
+
+Two Breaks in both level and trend for Emoney_Value
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -7.526
+Chosen Lags:                                               0
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2017-11-01          0.688 
+Second break:                      2019-02-01          0.797 
+==============================================================
+Reject the null hypothesis of a unit root at the 1% level.
+
+Two Breaks in both level and trend for SKNBI_Value
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -8.425
+Chosen Lags:                                               1
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2015-09-01          0.500 
+Second break:                      2017-05-01          0.645 
+==============================================================
+Reject the null hypothesis of a unit root at the 1% level.
+
+Two Breaks in both level and trend for BIRTGS_Value
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -8.833
+Chosen Lags:                                               3
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2011-11-01          0.167 
+Second break:                      2013-04-01          0.290 
+==============================================================
+Reject the null hypothesis of a unit root at the 1% level.
+
+Two Breaks in both level and trend for Debit_Volume
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -6.171
+Chosen Lags:                                               0
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2013-03-01          0.283 
+Second break:                      2019-09-01          0.848 
+==============================================================
+Reject the null hypothesis of a unit root at the 1% level.
+
+Two breaks in both level and trend for Credit_Volume
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -6.423
+Chosen Lags:                                              10
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2015-07-01          0.486 
+Second break:                      2019-05-01          0.819 
+==============================================================
+Reject the null hypothesis of a unit root at the 1% level.
+
+Two breaks in both level and trend for Emoney_Volume
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -4.633
+Chosen Lags:                                               0
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2014-06-01          0.391 
+Second break:                      2017-07-01          0.659 
+==============================================================
+Reject the null hypothesis of a unit root at the 10% level.
+
+Two breaks in both level and trend for SKNBI_Volume
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                             -11.807
+Chosen Lags:                                               0
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2016-05-01          0.558 
+Second break:                      2017-08-01          0.667 
+==============================================================
+Reject the null hypothesis of a unit root at the 1% level.
+
+Two breaks in both level and trend for BIRTGS_Volume
+
+Test:                                                    ADF 
+Ho:                                                Unit root 
+Number of breaks:                                          2 
+Lag selection:                             SIC lag selection 
+Trimming rate (%):                                        15 
+Model:                                Break in level & trend 
+==============================================================
+ADF-stat                                              -8.013
+Chosen Lags:                                               0
+
+Critical Values:
+                            1%             5%            10%
+                        -5.576         -4.937         -4.596
+==============================================================
+
+Estimated break dates:
+                                         Date       Fraction
+
+First break:                       2015-09-01          0.500 
+Second break:                      2016-09-01          0.587 
+==============================================================
+Reject the null hypothesis of a unit root at the 1% level.
