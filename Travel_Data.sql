@@ -1,4 +1,4 @@
-CREATE TABLE Airport_Board (
+CREATE TABLE Travel_Data (
     Customer_ID INT,
     First_Name VARCHAR(100),
     Last_name VARCHAR(100),
