@@ -1,0 +1,103 @@
+new;
+cls;
+library tspdlib;
+
+// Create Dataset Full Path from Directory
+Modeling = getGAUSShome () $+ "Practices/Modeling_Dataset.xlsx";
+
+// Load All Corresponding Dataset
+EconomicOutput  = loadd(modeling, "IPI + date($Date)");
+DebitN          = loadd(modeling, "NDEBIT + date($Date)");
+CreditN         = loadd(modeling, "NCREDIT + date($Date)");
+EmoneyN         = loadd(modeling, "NEMONEY + date($Date)");
+ClearingN       = loadd(modeling, "NSKNBI + date($Date)");
+RTGSN           = loadd(modeling, "NBIRTGS + date($Date)");
+DebitV          = loadd(modeling, "VDEBIT + date($Date)");
+CreditV         = loadd(modeling, "VCREDIT + date($Date)");
+EmoneyV         = loadd(modeling, "VEMONEY + date($Date)");
+ClearingV       = loadd(modeling, "VSKNBI + date($Date)");
+RTGSV           = loadd(modeling, "VBIRTGS + date($Date)");
+
+// Set Test Specificication for Model 1
+// Two Breaks Occur in level for corresponding variables
+"Model 1: Two Breaks Occur in Level";
+model   = 1;
+pmax    = 10;
+ic      = 2;
+trimm   = 0.15;
+
+// Execute Narayan and Popp (NP, 2010) Test for Each Variables
+"Two Breaks in level for Economic Output";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(EconomicOutput, model(pmax, ic, trimm));
+
+"Two Breaks in level for Debit Cards Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(DebitN, model(pmax, ic, trimm));
+
+"Two Breaks in level for Credit Cards Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(CreditN, model(pmax, ic, trimm));
+
+"Two Breaks in level for E-Money Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(EmoneyN, model(pmax, ic, trimm));
+
+"Two Breaks in level for Clearing System Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(ClearingN, model(pmax, ic, trimm));
+
+"Two Breaks in level for RTGS System Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(RTGSN, model(pmax, ic, trimm));
+
+"Two Breaks in level for Debit Cards Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(DebitV, model(pmax, ic, trimm));
+
+"Two Breaks in level for Credit Cards Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(CreditV, model(pmax, ic, trimm));
+
+"Two Breaks in level for E-Money Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(EmoneyV, model(pmax, ic, trimm));
+
+"Two Breaks in level for Clearing System Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(ClearingV, model(pmax, ic, trimm));
+
+"Two Breaks in level for RTGS System Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(RTGSV, model(pmax, ic, trimm));
+
+// Set Test Specificication for Model 2
+// Two Breaks Occur in both level and trend for corresponding variables
+"Model 2: Two Breaks Occur in Both Level and Trend";
+model   = 2;
+pmax    = 10;
+ic      = 2;
+trimm   = 0.15;
+
+// Execute Narayan and Popp (NP, 2010) Test for Each Variables
+"Two Breaks in level and trend for Economic Output";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(EconomicOutput, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for Debit Cards Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(DebitN, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for Credit Cards Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(CreditN, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for E-Money Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(EmoneyN, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for Clearing System Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(ClearingN, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for RTGS System Value";
+{ ADF_Min, tb1, tb2, p, cv } = ADF_2breaks(RTGSN, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for Debit Cards Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(DebitV, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for Credit Cards Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(CreditV, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for E-Money Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(EmoneyV, model(pmax, ic, trimm));
+
+"Two Breaks in level for and trend Clearing System Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(ClearingV, model(pmax, ic, trimm));
+
+"Two Breaks in level and trend for RTGS System Volume";
+{ ADF_min, tb1, tb2, p, cv } = ADF_2breaks(RTGSV, model(pmax, ic, trimm));
