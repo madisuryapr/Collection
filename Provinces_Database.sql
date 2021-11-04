@@ -1,3 +1,5 @@
+-- Data for 34 Provinces in Indonesia (as per 2020)
+
 CREATE TABLE Provinces_Database (
 Province_id INT NOT NULL PRIMARY KEY,
 Province VARCHAR(50),
